@@ -1,0 +1,14 @@
+{
+    "legacy_addon_id": "",
+    "title": "LiteSpeed Cache",
+    "description": "The LiteSpeed Cache Plugin for XenForo 2 (LSCXF2) is a PHP-based plugin that communicates with your installation of LiteSpeed Web Server (LSWS).",
+    "version_id": 2000030,
+    "version_string": "2.0.0",
+    "dev": "LiteSpeed Technologies",
+    "dev_url": "https://www.litespeedtech.com",
+    "faq_url": "https://www.litespeedtech.com",
+    "support_url": "https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:cache#lscache_plugins_by_application",
+    "extra_urls": [],
+    "require": [],
+    "icon": "lscxf2-logo.png"
+}
