@@ -25,6 +25,7 @@ seconds the content should remain cached (Recommended < 10 mins):
 
         # LiteSpeed XenForo cache
         <IfModule litespeed>
+            CacheLookup public on
             RewriteEngine On
              # cache
              RewriteCond %{HTTP_COOKIE} !xf_user [NC]

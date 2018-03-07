@@ -57,6 +57,7 @@ class Listener
 
         if ( method_exists($reply, 'getViewClass') ) {
             $viewClass = $reply->getViewClass();
+
             $doNotCacheViewClass = array(
                 "XF:Login\TwoStep",
                 "XF:Error\RegistrationRequired",

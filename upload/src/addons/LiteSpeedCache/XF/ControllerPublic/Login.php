@@ -8,7 +8,7 @@
 
 namespace LiteSpeedCache\XF\ControllerPublic;
 
-use XF\Mvc\ParameterBag;
+use \XF\Mvc\ParameterBag;
 
 class Login extends XFCP_Login
 {
