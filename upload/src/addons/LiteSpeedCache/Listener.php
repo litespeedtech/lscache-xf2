@@ -43,15 +43,11 @@ class Listener
             $action, \XF\Mvc\ParameterBag $params,
             \XF\Mvc\Reply\AbstractReply &$reply )
     {
-        $doNotCacheControllers = array(
-            "XF\Pub\Controller\Login",
-            "XF\Pub\Controller\Register"
-        );
-
-        $class = get_class($controller);
         $cache = true;
 
-        if ( in_array($class, $doNotCacheControllers) ) {
+        if ( $controller instanceof \XF\Pub\Controller\Login
+                || $controller instanceof \XF\Pub\Controller\Register ) {
+
             $cache = false;
         }
 
