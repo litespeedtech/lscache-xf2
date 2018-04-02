@@ -32,5 +32,7 @@ seconds the content should remain cached (Recommended < 10 mins):
              RewriteRule .* - [E=Cache-Control:max-age=360]
              # no cache
              RewriteCond %{HTTP_COOKIE} xf_user [NC]
+             RewriteRule .* - [E=Cache-Control:vary=loggedin]
+             RewriteCond %{HTTP_COOKIE} xf_user [NC]
              RewriteRule .* - [E=Cache-Control:no-cache]
         </IfModule>
