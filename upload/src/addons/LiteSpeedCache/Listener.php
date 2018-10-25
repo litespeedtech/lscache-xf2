@@ -46,7 +46,8 @@ class Listener
         $cache = true;
 
         if ( $controller instanceof \XF\Pub\Controller\Login
-                || $controller instanceof \XF\Pub\Controller\Register ) {
+                || $controller instanceof \XF\Pub\Controller\Register
+                || $controller instanceof \XF\Admin\Controller\AbstractController) {
 
             $cache = false;
         }
