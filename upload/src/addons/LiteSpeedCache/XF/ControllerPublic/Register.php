@@ -8,7 +8,7 @@
 
 namespace LiteSpeedCache\XF\ControllerPublic;
 
-use XF\Mvc\ParameterBag;
+use \XF\Mvc\ParameterBag;
 
 class Register extends XFCP_Register
 {
@@ -20,9 +20,7 @@ class Register extends XFCP_Register
         if ( $visitor['user_id'] && $visitor['user_id'] != 0 ) {
             parent::checkCsrfIfNeeded($action, $params);
         }
-        else {
-            return;
-        }
+        // else bypass check
     }
 
 }

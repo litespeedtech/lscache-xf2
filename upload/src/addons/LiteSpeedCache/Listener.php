@@ -25,29 +25,35 @@
 
 namespace LiteSpeedCache;
 
+use \XF\Admin\Controller\AbstractController;
+use \XF\App;
+use \XF\Http\Response;
+use \XF\Mvc\Controller;
+use \XF\Mvc\ParameterBag;
+use \XF\Mvc\Reply\AbstractReply;
+use \XF\Pub\Controller\Login;
+use \XF\Pub\Controller\Register;
+
 class Listener
 {
 
-    public static function emptyCacheForLoggedUser( \XF\App $app,
-            \XF\Http\Response &$response )
+    public static function emptyCacheForLoggedUser( App $app,
+            Response &$response )
     {
         $visitor = \XF::visitor();
 
         if ( $visitor['user_id'] && $visitor['user_id'] != 0 ) {
-            $cache_header = 'no-cache';
-            $response->header('X-LiteSpeed-Cache-Control', $cache_header);
+            $response->header('X-LiteSpeed-Cache-Control', 'no-cache');
         }
     }
 
-    public static function doNotCachePages( \XF\Mvc\Controller $controller,
-            $action, \XF\Mvc\ParameterBag $params,
-            \XF\Mvc\Reply\AbstractReply &$reply )
+    public static function doNotCachePages( Controller $controller, $action,
+            ParameterBag $params, AbstractReply &$reply )
     {
         $cache = true;
 
-        if ( $controller instanceof \XF\Pub\Controller\Login
-                || $controller instanceof \XF\Pub\Controller\Register
-                || $controller instanceof \XF\Admin\Controller\AbstractController) {
+        if ( $controller instanceof Login || $controller instanceof Register
+                || $controller instanceof AbstractController) {
 
             $cache = false;
         }

@@ -8,7 +8,7 @@
 
 namespace LiteSpeedCache\XF\ControllerPublic;
 
-use XF\Mvc\ParameterBag;
+use \XF\Mvc\ParameterBag;
 
 class Login extends XFCP_Login
 {
@@ -20,9 +20,7 @@ class Login extends XFCP_Login
         if ( $visitor['user_id'] && $visitor['user_id'] != 0 ) {
             parent::checkCsrfIfNeeded($action, $params);
         }
-        else {
-            return;
-        }
+        // else bypass check
     }
 
 }
