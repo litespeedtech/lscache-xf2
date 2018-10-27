@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @since 1.1.0
+ * @since 2.1.0
  *
  * Contributions By: Jean-Baptiste Chauvin (foro.agency)
  */

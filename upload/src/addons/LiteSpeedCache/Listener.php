@@ -4,7 +4,7 @@
  *
  * @copyright (C) 2018 LiteSpeed Technologies, Inc.
  * @link     https://www.litespeedtech.com
- * @since    1.0.0
+ * @since    2.0.0
  *
  * Contributions By: Jean-Baptiste Chauvin (foro.agency)
  *
