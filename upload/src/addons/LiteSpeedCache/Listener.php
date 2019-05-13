@@ -50,12 +50,12 @@ class Listener
     public static function doNotCachePages( Controller $controller, $action,
             ParameterBag $params, AbstractReply &$reply )
     {
-        $cache = true;
-
-        if ( $controller instanceof Login || $controller instanceof Register
+        if ( $controller instanceof Login
+                || $controller instanceof Register
                 || $controller instanceof AbstractController) {
 
-            $cache = false;
+            self::sendNoCacheHeader();
+            return;
         }
 
         if ( method_exists($reply, 'getViewClass') ) {
@@ -68,7 +68,8 @@ class Listener
             );
 
             if ( in_array($viewClass, $doNotCacheViewClass) ) {
-                $cache = false;
+                self::sendNoCacheHeader();
+                return;
             }
         }
 
@@ -76,13 +77,15 @@ class Listener
             $responseCode = $reply->getResponseCode();
 
             if ( $responseCode == 403 ) {
-                $cache = false;
+                self::sendNoCacheHeader();
+                return;
             }
         }
+    }
 
-        if ( $cache == false ) {
-            header('X-LiteSpeed-Cache-Control: no-cache');
-        }
+    private static function sendNoCacheHeader()
+    {
+        header('X-LiteSpeed-Cache-Control: no-cache');
     }
 
 }
