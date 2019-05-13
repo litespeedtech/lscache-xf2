@@ -1,16 +1,15 @@
 <?php
 /**
  *
- * @since 2.1.0
+ * @since 2.1.1
  *
- * Contributions By: Jean-Baptiste Chauvin (foro.agency)
  */
 
-namespace LiteSpeedCache\XF\ControllerPublic;
+namespace LiteSpeedCache\XF\Pub\Controller;
 
 use \XF\Mvc\ParameterBag;
 
-class Register extends XFCP_Register
+class Search extends XFCP_Search
 {
 
     public function checkCsrfIfNeeded( $action, ParameterBag $params )

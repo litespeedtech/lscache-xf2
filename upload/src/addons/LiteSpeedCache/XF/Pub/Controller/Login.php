@@ -1,15 +1,16 @@
 <?php
 /**
  *
- * @since 2.1.1
+ * @since 2.1.0
  *
+ * Contributions By: Jean-Baptiste Chauvin (foro.agency)
  */
 
-namespace LiteSpeedCache\XF\ControllerPublic;
+namespace LiteSpeedCache\XF\Pub\Controller;
 
 use \XF\Mvc\ParameterBag;
 
-class LostPassword extends XFCP_LostPassword
+class Login extends XFCP_Login
 {
 
     public function checkCsrfIfNeeded( $action, ParameterBag $params )

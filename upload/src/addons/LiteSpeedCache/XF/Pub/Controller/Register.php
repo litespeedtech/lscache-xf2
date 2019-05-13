@@ -6,11 +6,11 @@
  * Contributions By: Jean-Baptiste Chauvin (foro.agency)
  */
 
-namespace LiteSpeedCache\XF\ControllerPublic;
+namespace LiteSpeedCache\XF\Pub\Controller;
 
 use \XF\Mvc\ParameterBag;
 
-class Login extends XFCP_Login
+class Register extends XFCP_Register
 {
 
     public function checkCsrfIfNeeded( $action, ParameterBag $params )

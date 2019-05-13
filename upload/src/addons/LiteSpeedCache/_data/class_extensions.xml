@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class_extensions>
-  <extension from_class="XF\Pub\Controller\Login" to_class="LiteSpeedCache\XF\ControllerPublic\Login" execute_order="10" active="1"/>
-  <extension from_class="XF\Pub\Controller\LostPassword" to_class="LiteSpeedCache\XF\ControllerPublic\LostPassword" execute_order="10" active="1"/>
-  <extension from_class="XF\Pub\Controller\Register" to_class="LiteSpeedCache\XF\ControllerPublic\Register" execute_order="10" active="1"/>
-  <extension from_class="XF\Pub\Controller\Search" to_class="LiteSpeedCache\XF\ControllerPublic\Search" execute_order="10" active="1"/>
+  <extension from_class="XF\Pub\Controller\Login" to_class="LiteSpeedCache\XF\Pub\Controller\Login" execute_order="10" active="1"/>
+  <extension from_class="XF\Pub\Controller\LostPassword" to_class="LiteSpeedCache\XF\Pub\Controller\LostPassword" execute_order="10" active="1"/>
+  <extension from_class="XF\Pub\Controller\Register" to_class="LiteSpeedCache\XF\Pub\Controller\Register" execute_order="10" active="1"/>
+  <extension from_class="XF\Pub\Controller\Search" to_class="LiteSpeedCache\XF\Pub\Controller\Search" execute_order="10" active="1"/>
 </class_extensions>

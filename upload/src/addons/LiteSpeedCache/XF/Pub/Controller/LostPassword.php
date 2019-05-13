@@ -5,11 +5,11 @@
  *
  */
 
-namespace LiteSpeedCache\XF\ControllerPublic;
+namespace LiteSpeedCache\XF\Pub\Controller;
 
 use \XF\Mvc\ParameterBag;
 
-class Search extends XFCP_Search
+class LostPassword extends XFCP_LostPassword
 {
 
     public function checkCsrfIfNeeded( $action, ParameterBag $params )
