@@ -1,8 +1,8 @@
 <?php
+
 /**
  *
  * @since 2.1.1
- *
  */
 
 namespace LiteSpeedCache\XF\Pub\Controller;
