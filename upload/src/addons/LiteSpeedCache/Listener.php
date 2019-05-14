@@ -37,6 +37,8 @@ use \XF\Pub\Controller\Register;
 class Listener
 {
 
+    const LOGGED_IN_COOKIE_NAME = 'lscxf_logged_in';
+
     public static function emptyCacheForLoggedUser( App $app,
             Response &$response )
     {
