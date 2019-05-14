@@ -78,7 +78,9 @@ class Listener
         if ( method_exists($reply, 'getResponseCode') ) {
             $responseCode = $reply->getResponseCode();
 
-            if ( $responseCode == 403 ) {
+            $cacheableResponses = array(200, 404);
+
+            if ( !in_array($responseCode, $cacheableResponses) ) {
                 self::sendNoCacheHeader();
                 return;
             }
