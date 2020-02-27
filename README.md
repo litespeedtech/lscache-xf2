@@ -30,7 +30,7 @@ seconds the content should remain cached (Recommended < 10 mins):
              # cache
              RewriteCond %{HTTP_COOKIE} !(xf_lscxf_logged_in|xf_user|xf_session_admin) [NC]
              RewriteCond %{REQUEST_URI} !/install/ [NC]
-             RewriteRule .* - [E=Cache-Control:max-age=360]
+             RewriteRule .* - [E=Cache-Control:max-age=360,E="cache-vary:xf_style_id,xf_language_id"]
              # no cache
              RewriteCond %{HTTP_COOKIE} (xf_lscxf_logged_in|xf_user|xf_session_admin) [NC]
              RewriteRule .* - [E=Cache-Control:vary=loggedin,E=Cache-Control:no-cache]
