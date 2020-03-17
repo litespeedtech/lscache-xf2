@@ -1,5 +1,5 @@
 {
-    "src/addons/LiteSpeedCache/addon.json": "fb1d6cd8cc3bfab13027e97b99f8e59b8efd42a60cd15283cbe3e407c45a8948",
+    "src/addons/LiteSpeedCache/addon.json": "a81b30b83c94e3f0b81b6cccf27778d21e3fa036afb78a20d72a869af1574456",
     "src/addons/LiteSpeedCache/Listener.php": "5433740d115ed32ade9808cf73438f26df41e9b04607b4a52e0dc0504d9f4ef7",
     "src/addons/LiteSpeedCache/lscxf2-logo.png": "f5f98f19ede49cf9ebe8e1d8281ea527e421592b8a353524aff02d59a8303945",
     "src/addons/LiteSpeedCache/Setup.php": "59ec70c34552646798cf7af65eb3913368663253d554edf0075f6be2a4c9e682",
@@ -7,9 +7,10 @@
     "src/addons/LiteSpeedCache/XF/Pub/Controller/Account.php": "70def0e4dbdc2ec2bf2b2f03b5451f6a3ddc35700ed623c609bd76b5e4015a26",
     "src/addons/LiteSpeedCache/XF/Pub/Controller/Login.php": "3d7f3b507fe1d1517a84efb1146cc3fd1efd242bbb688784148a4a801392a6bc",
     "src/addons/LiteSpeedCache/XF/Pub/Controller/LostPassword.php": "cfd479cd75dd54f7eb1d11eae5046d798b2d78b30b223fefef6953d2b75ef20b",
+    "src/addons/LiteSpeedCache/XF/Pub/Controller/Misc.php": "6e363a591857ddc75dc694ca66ff4e6473ca6e0fba911c15353a9e098199694b",
     "src/addons/LiteSpeedCache/XF/Pub/Controller/Register.php": "14aaede8ac0bcc7347781267eeeb88cd0235b990ad816a6e42e1514efa5b058f",
     "src/addons/LiteSpeedCache/XF/Pub/Controller/Search.php": "734ba544146fc0a56bf82716f0360223567c6f609502b291f01fac815125e4a4",
     "src/addons/LiteSpeedCache/XF/Session/Session.php": "d430e14e92dbbe9128d5e9ad9e9a1ef48a4580dd6369e81aa2b75938eba947eb",
-    "src/addons/LiteSpeedCache/_data/class_extensions.xml": "164c9aa3a79e95eb9c79a076168f9d7bfc417e11e9bc919c4d3d8cfc4ca1163e",
-    "src/addons/LiteSpeedCache/_data/code_event_listeners.xml": "2b35eeed3adf0cbf1ecbc8062144ae937188df40f33eb2a251fbca2b4dca4ce0"
+    "src/addons/LiteSpeedCache/_data/class_extensions.xml": "5f4058015eb83cfb976f0574cdeb5d6494ffc0a92e8f6201273c141eeca6e36b",
+    "src/addons/LiteSpeedCache/_data/code_event_listeners.xml": "2b35eeed3adf0cbf1ecbc8062144ae937188df40f33eb2a251fbca2b4dca4ce0",
 }
