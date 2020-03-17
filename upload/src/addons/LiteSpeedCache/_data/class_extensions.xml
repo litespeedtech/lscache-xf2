@@ -4,6 +4,7 @@
   <extension from_class="XF\Pub\Controller\Account" to_class="LiteSpeedCache\XF\Pub\Controller\Account" execute_order="10" active="1"/>
   <extension from_class="XF\Pub\Controller\Login" to_class="LiteSpeedCache\XF\Pub\Controller\Login" execute_order="10" active="1"/>
   <extension from_class="XF\Pub\Controller\LostPassword" to_class="LiteSpeedCache\XF\Pub\Controller\LostPassword" execute_order="10" active="1"/>
+  <extension from_class="XF\Pub\Controller\Misc" to_class="LiteSpeedCache\XF\Pub\Controller\Misc" execute_order="10" active="1"/>
   <extension from_class="XF\Pub\Controller\Register" to_class="LiteSpeedCache\XF\Pub\Controller\Register" execute_order="10" active="1"/>
   <extension from_class="XF\Pub\Controller\Search" to_class="LiteSpeedCache\XF\Pub\Controller\Search" execute_order="10" active="1"/>
   <extension from_class="XF\Session\Session" to_class="LiteSpeedCache\XF\Session\Session" execute_order="10" active="1"/>
