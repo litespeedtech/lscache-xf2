@@ -1,5 +1,5 @@
 {
-    "src/addons/LiteSpeedCache/addon.json": "3c9e44804bc692aee7a05b58ec8b11b0e65fb4a6ff62c65f23bf73c0ac5e2a54",
+    "src/addons/LiteSpeedCache/addon.json": "5bddbb59b85c47d8d4a7a9102799cbb234df76264c03f1cbc752222557e43c0f",
     "src/addons/LiteSpeedCache/Listener.php": "5433740d115ed32ade9808cf73438f26df41e9b04607b4a52e0dc0504d9f4ef7",
     "src/addons/LiteSpeedCache/lscxf2-logo.png": "f5f98f19ede49cf9ebe8e1d8281ea527e421592b8a353524aff02d59a8303945",
     "src/addons/LiteSpeedCache/Setup.php": "59ec70c34552646798cf7af65eb3913368663253d554edf0075f6be2a4c9e682",
