@@ -14,5 +14,5 @@
     "src/addons/LiteSpeedCache/XF/Pub/Controller/Thread.php": "f5150ccb542fbdda6e4407b7eb487ae7b4bcede10a5c923f98eb9d17ba8ccb87",
     "src/addons/LiteSpeedCache/XF/Session/Session.php": "d430e14e92dbbe9128d5e9ad9e9a1ef48a4580dd6369e81aa2b75938eba947eb",
     "src/addons/LiteSpeedCache/_data/class_extensions.xml": "5853ba242b0a0fbfb703fb37c2277916c1f8b05feddc63a1a9f0fcede1351ae7",
-    "src/addons/LiteSpeedCache/_data/code_event_listeners.xml": "2b35eeed3adf0cbf1ecbc8062144ae937188df40f33eb2a251fbca2b4dca4ce0",
+    "src/addons/LiteSpeedCache/_data/code_event_listeners.xml": "2b35eeed3adf0cbf1ecbc8062144ae937188df40f33eb2a251fbca2b4dca4ce0"
 }
