@@ -17,8 +17,8 @@ class Session extends XFCP_Session
         /**
          * Remove custom login tracking cookie on logout.
          */
-        \XF::app()->response()->
-                removeCookie(LscListener::LOGGED_IN_COOKIE_NAME);
+        $response = \XF::app()->response();
+        $response->setCookie(LscListener::LOGGED_IN_COOKIE_NAME, false);
 
 		parent::logoutUser();
 	}
