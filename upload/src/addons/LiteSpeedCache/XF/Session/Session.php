@@ -22,4 +22,21 @@ class Session extends XFCP_Session
 
 		parent::logoutUser();
 	}
+
+    public function changeUser(\XF\Entity\User $user)
+    {
+        if ( $user->user_id != 0 ) {
+            \XF::app()->response()
+            ->setCookie(LscListener::LOGGED_IN_COOKIE_NAME, 1)
+            ;
+        }
+        else {
+            \XF::app()->response()
+            ->setCookie(LscListener::LOGGED_IN_COOKIE_NAME, false)
+            ;
+        }
+
+        return parent::changeUser($user);
+    }
+
 }
