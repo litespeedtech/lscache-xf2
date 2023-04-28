@@ -7,20 +7,26 @@
 
 namespace LiteSpeedCache\XF\Pub\Controller;
 
-use \XF\Mvc\ParameterBag;
+use XF;
 
 class Misc extends XFCP_Misc
 {
 
-    public function validateCsrfToken($token = null, &$error = null, $validityPeriod = null)
+    /**
+     *
+     * @noinspection PhpUnused
+     */
+    public function validateCsrfToken(
+        $token = null,
+        &$error = null,
+        $validityPeriod = null)
     {
-        $visitor = \XF::visitor();
-
-        if ( $visitor['user_id'] && $visitor['user_id'] != 0 ) {
-            return parent::validateCsrfToken($token, $error, $validityPeriod);
+        if ( XF::visitor()->user_id == 0 ) {
+            return true;
         }
-        // else bypass check
-        return true;
+
+        /** @noinspection PhpUndefinedClassInspection */
+        return parent::validateCsrfToken($token, $error, $validityPeriod);
     }
 
 }
