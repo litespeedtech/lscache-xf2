@@ -47,6 +47,9 @@ class Listener
         if ( $visitor['user_id'] && $visitor['user_id'] != 0 ) {
             $response->header('X-LiteSpeed-Cache-Control', 'no-cache');
         }
+        else {
+            $response->setCookie(self::LOGGED_IN_COOKIE_NAME, false);
+        }
     }
 
     public static function doNotCachePages( Controller $controller, $action,
