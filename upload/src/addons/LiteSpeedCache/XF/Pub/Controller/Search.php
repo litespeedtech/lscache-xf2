@@ -7,19 +7,20 @@
 
 namespace LiteSpeedCache\XF\Pub\Controller;
 
-use \XF\Mvc\ParameterBag;
+use XF;
+use XF\Mvc\ParameterBag;
 
 class Search extends XFCP_Search
 {
 
     public function checkCsrfIfNeeded( $action, ParameterBag $params )
     {
-        $visitor = \XF::visitor();
-
-        if ( $visitor['user_id'] && $visitor['user_id'] != 0 ) {
-            parent::checkCsrfIfNeeded($action, $params);
+        if ( XF::visitor()->user_id == 0 ) {
+            return;
         }
-        // else bypass check
+
+        /** @noinspection PhpUndefinedClassInspection */
+        parent::checkCsrfIfNeeded($action, $params);
     }
 
 }
