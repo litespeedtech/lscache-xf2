@@ -8,34 +8,50 @@
 namespace LiteSpeedCache\XF\Session;
 
 use LiteSpeedCache\Listener as LscListener;
+use XF;
+use XF\Entity\User;
 
 class Session extends XFCP_Session
 {
 
+    /**
+     *
+     * @noinspection PhpUnused
+     */
     public function logoutUser()
 	{
-        /**
-         * Remove custom login tracking cookie on logout.
-         */
-        $response = \XF::app()->response();
-        $response->setCookie(LscListener::LOGGED_IN_COOKIE_NAME, false);
+        XF::app()->response()
+        ->setCookie(LscListener::LOGGED_IN_COOKIE_NAME, false)
+        ;
 
-		parent::logoutUser();
+        /** @noinspection PhpUndefinedClassInspection */
+        parent::logoutUser();
 	}
 
-    public function changeUser(\XF\Entity\User $user)
+    /**
+     *
+     * @since release_ver_placeholder
+     *
+     * @param User $user
+     *
+     * @return \XF\Session\Session
+     *
+     * @noinspection PhpUnused
+     */
+    public function changeUser( User $user)
     {
         if ( $user->user_id != 0 ) {
-            \XF::app()->response()
+            XF::app()->response()
             ->setCookie(LscListener::LOGGED_IN_COOKIE_NAME, 1)
             ;
         }
         else {
-            \XF::app()->response()
+            XF::app()->response()
             ->setCookie(LscListener::LOGGED_IN_COOKIE_NAME, false)
             ;
         }
 
+        /** @noinspection PhpUndefinedClassInspection */
         return parent::changeUser($user);
     }
 
