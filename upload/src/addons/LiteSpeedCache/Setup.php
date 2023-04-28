@@ -9,7 +9,7 @@
 
 namespace LiteSpeedCache;
 
-use \XF\AddOn\AbstractSetup;
+use XF\AddOn\AbstractSetup;
 
 class Setup extends AbstractSetup
 {
