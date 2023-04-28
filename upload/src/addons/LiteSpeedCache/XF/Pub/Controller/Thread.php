@@ -7,22 +7,21 @@
 
 namespace LiteSpeedCache\XF\Pub\Controller;
 
-use \XF;
-use \XF\Mvc\ParameterBag;
+use XF;
+use XF\Mvc\ParameterBag;
 
 class Thread extends XFCP_Thread
 {
 
     public function checkCsrfIfNeeded( $action, ParameterBag $params )
     {
-        if ( $action == 'AddReply' || $action == 'Draft' ) {
-            $visitor = XF::visitor();
+        if ( ($action == 'AddReply' || $action == 'Draft')
+                && XF::visitor()->user_id == 0 ) {
 
-            if ( !$visitor['user_id'] || $visitor['user_id'] == 0 ) {
-                return;
-            }
+            return;
         }
 
+        /** @noinspection PhpUndefinedClassInspection */
         parent::checkCsrfIfNeeded($action, $params);
     }
 
