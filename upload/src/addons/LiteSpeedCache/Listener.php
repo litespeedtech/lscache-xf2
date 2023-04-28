@@ -2,7 +2,7 @@
 
 /**
  *
- * @copyright (C) 2018 LiteSpeed Technologies, Inc.
+ * @copyright (C) 2018-2023 LiteSpeed Technologies, Inc.
  * @link     https://www.litespeedtech.com
  * @since    2.0.0
  *
@@ -25,26 +25,35 @@
 
 namespace LiteSpeedCache;
 
-use \XF\Admin\Controller\AbstractController;
-use \XF\App;
-use \XF\Http\Response;
-use \XF\Mvc\Controller;
-use \XF\Mvc\ParameterBag;
-use \XF\Mvc\Reply\AbstractReply;
-use \XF\Pub\Controller\Login;
-use \XF\Pub\Controller\Register;
+use XF;
+use XF\Admin\Controller\AbstractController;
+use XF\App;
+use XF\Http\Response;
+use XF\Mvc\Controller;
+use XF\Mvc\ParameterBag;
+use XF\Mvc\Reply\AbstractReply;
+use XF\Pub\Controller\Login;
+use XF\Pub\Controller\Register;
 
 class Listener
 {
 
+    /**
+     * @var string
+     */
     const LOGGED_IN_COOKIE_NAME = 'lscxf_logged_in';
 
-    public static function emptyCacheForLoggedUser( App $app,
-            Response &$response )
+    /**
+     *
+     * @noinspection PhpUnused
+     * @noinspection PhpUnusedParameterInspection
+     * @noinspection PhpParameterByRefIsNotUsedAsReferenceInspection
+     */
+    public static function emptyCacheForLoggedUser(
+        App      $app,
+        Response &$response )
     {
-        $visitor = \XF::visitor();
-
-        if ( $visitor['user_id'] && $visitor['user_id'] != 0 ) {
+        if ( XF::visitor()->user_id != 0 ) {
             $response->header('X-LiteSpeed-Cache-Control', 'no-cache');
         }
         else {
@@ -52,8 +61,17 @@ class Listener
         }
     }
 
-    public static function doNotCachePages( Controller $controller, $action,
-            ParameterBag $params, AbstractReply &$reply )
+    /**
+     *
+     * @noinspection PhpUnused
+     * @noinspection PhpUnusedParameterInspection
+     * @noinspection PhpParameterByRefIsNotUsedAsReferenceInspection
+     */
+    public static function doNotCachePages(
+        Controller    $controller,
+                      $action,
+        ParameterBag  $params,
+        AbstractReply &$reply )
     {
         if ( $controller instanceof Login
                 || $controller instanceof Register
@@ -64,29 +82,28 @@ class Listener
         }
 
         if ( method_exists($reply, 'getViewClass') ) {
-            $viewClass = $reply->getViewClass();
-
-            $doNotCacheViewClass = array(
-                "XF:Error\RegistrationRequired",
-                "XF:Error\Server",
-                "XF:Login\TwoStep",
-                "XF:LostPassword\Confirm"
+            $isDoNotCacheView = in_array(
+                $reply->getViewClass(),
+                array(
+                    "XF:Error\RegistrationRequired",
+                    "XF:Error\Server",
+                    "XF:Login\TwoStep",
+                    "XF:LostPassword\Confirm"
+                )
             );
 
-            if ( in_array($viewClass, $doNotCacheViewClass) ) {
+            if ( $isDoNotCacheView ) {
                 self::sendNoCacheHeader();
                 return;
             }
         }
 
         if ( method_exists($reply, 'getResponseCode') ) {
-            $responseCode = $reply->getResponseCode();
+            $isCacheableResponseCode =
+                in_array($reply->getResponseCode(), array(200, 404));
 
-            $cacheableResponses = array(200, 404);
-
-            if ( !in_array($responseCode, $cacheableResponses) ) {
+            if ( !$isCacheableResponseCode ) {
                 self::sendNoCacheHeader();
-                return;
             }
         }
     }
