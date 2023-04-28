@@ -17,7 +17,7 @@ class Misc extends XFCP_Misc
         $visitor = \XF::visitor();
 
         if ( $visitor['user_id'] && $visitor['user_id'] != 0 ) {
-            parent::validateCsrfToken($token, $error, $validityPeriod);
+            return parent::validateCsrfToken($token, $error, $validityPeriod);
         }
         // else bypass check
         return true;
