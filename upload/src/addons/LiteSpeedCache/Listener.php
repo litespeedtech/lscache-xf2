@@ -67,9 +67,10 @@ class Listener
             $viewClass = $reply->getViewClass();
 
             $doNotCacheViewClass = array(
-                "XF:Login\TwoStep",
                 "XF:Error\RegistrationRequired",
                 "XF:Error\Server",
+                "XF:Login\TwoStep",
+                "XF:LostPassword\Confirm"
             );
 
             if ( in_array($viewClass, $doNotCacheViewClass) ) {
