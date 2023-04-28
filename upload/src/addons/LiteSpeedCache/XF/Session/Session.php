@@ -30,7 +30,7 @@ class Session extends XFCP_Session
 
     /**
      *
-     * @since release_ver_placeholder
+     * @since 2.3.0
      *
      * @param User $user
      *
