@@ -40,7 +40,9 @@ class Session extends XFCP_Session
      */
     public function changeUser( User $user)
     {
-        if ( $user->user_id != 0 ) {
+        $userId = $user->user_id;
+
+        if ( $userId != 0 ) {
             XF::app()->response()
             ->setCookie(LscListener::LOGGED_IN_COOKIE_NAME, 1)
             ;
@@ -50,6 +52,8 @@ class Session extends XFCP_Session
             ->setCookie(LscListener::LOGGED_IN_COOKIE_NAME, false)
             ;
         }
+
+        LscListener::$userChangedTo = $userId;
 
         /** @noinspection PhpUndefinedClassInspection */
         return parent::changeUser($user);
