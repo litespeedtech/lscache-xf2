@@ -44,6 +44,12 @@ class Listener
     const LOGGED_IN_COOKIE_NAME = 'lscxf_logged_in';
 
     /**
+     * @since 2.3.0
+     * @var null|int
+     */
+    public static $userChangedTo = null;
+
+    /**
      *
      * @noinspection PhpUnused
      * @noinspection PhpUnusedParameterInspection
