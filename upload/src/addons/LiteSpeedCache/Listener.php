@@ -59,7 +59,7 @@ class Listener
         App      $app,
         Response &$response )
     {
-        if ( XF::visitor()->user_id != 0 ) {
+        if ( XF::visitor()->user_id != 0 || self::$userChangedTo != 0 ) {
             $response->header('X-LiteSpeed-Cache-Control', 'no-cache');
         }
         else {
